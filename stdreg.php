@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style.css">
 <body>
-    <div class="container" style="height:110%">
+    <div class="container" style="height:120%">
         <form action="processing.php" method=
         "post">
             <br><br>
