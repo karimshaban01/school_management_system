@@ -1,6 +1,6 @@
 <?php $conn = new mysqli("localhost", "root", "", "sms");
         if($conn){
-            //echo "connected successfully";
+           //echo "connected successfully";
             if(isset($_POST['submit'])){
                 //echo "submit button clicked";
                 //reading data
