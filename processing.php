@@ -22,9 +22,9 @@
                 
 
         if($status == 'student'){
-                    echo "its a student";
+                    echo "its a student-";
                 //inserting data into db
-                $sql = "INSERT INTO student VALUES('$id', '$name', '$image', '$dob', '$address', '$contact', '$birth_doc', '$nin', '$email','$disability', '$password')";
+                $sql = "INSERT INTO student VALUES('$id', '$name', '$image', '$dob', '$address', '$contact', '$birth_doc', '$nin', '$email','$disability', '$password', '$status')";
     
                 if(mysqli_query($conn, $sql)){
                     echo "a record inserted";
@@ -59,9 +59,9 @@
                 $proffesion = $_POST['proffesion'];
                 $salary = $_POST['salary'];
                 $paid = $_POST['paid'];
-                echo $status;
+                
 
-                $sql = "INSERT INTO staff VALUES('$id', '$name', '$dob', '$contact', '$email', '$nin', '$refferee', '$address', '$proffesion', '$image', '$roles', '$disability', '$salary', '$paid', '$password')";
+                $sql = "INSERT INTO staff VALUES('$id', '$name', '$dob', '$contact', '$email', '$nin', '$refferee', '$address', '$proffesion', '$image', '$roles', '$disability', '$salary', '$paid', '$password', '$status')";
     
                 if(mysqli_query($conn, $sql)){
                     echo "a record inserted";
@@ -71,7 +71,55 @@
             } 
          else {
             echo "failed to connect";
-        }}}
+        }}
+        elseif(isset($_POST['login'])){
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $sql = "SELECT email, password, status FROM student WHERE email ='$email' AND password ='$password'
+                    UNION SELECT email, password, status FROM staff WHERE email ='$email' AND password ='$password'
+                    UNION SELECT email, password, status FROM teachers WHERE email ='$email' AND password ='$password'";
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_assoc($result);
+
+            $temail = $row['email'];
+            $tpassword = $row['password'];
+            $status = $row['status'];
+                
+                if($email === $temail && $password === $tpassword){
+                    
+                       if($status==="student"){
+                        echo $row['email']." ===> access granted<br>";
+                        echo "redirecting to student dashboard.......<br>";
+                        header("Location: student.php");
+                       } 
+                       
+                       elseif($status==="staff"){
+                        echo $row['email']." ===> access granted<br>";
+                        echo "redirecting to staff panel........<br>";
+                       header("Location: staff.php");
+                       } 
+                       
+                       elseif($status === "teachers"){
+                        echo $row['email']." ===> access granted<br>";
+                        echo "redirecting to teacher panel........<br>";
+                        header("Location : teacher.php");
+                       } 
+                       
+                       else {
+                        echo "access denied XXXXXX<br>";
+                        echo "echo something went wrong try again......<br>";
+                        header("Location: staff.php");
+                       }
+                     } else {
+                        echo "not registered........";
+                        header("Location: login.php");
+                     }
+
+            }
+
+
+        }
+    
         
-        
-?>
+        ?>

@@ -16,7 +16,7 @@
                 $nin = $_POST['nin'];
                 $disability = $_POST['disability'];
                 $password = $_POST['password'];
-
+                
                 //for a teacher
                 $empno = $_POST['employee_no'];
                 $edn = $_POST['edn_level'];
@@ -48,4 +48,6 @@
         }
         
         
-?>
+SELECT email, password, status FROM teachers WHERE email='.$email.' AND password ='.password.' 
+                    UNION SELECT email, password, status FROM staff WHERE email='.$email.' AND password ='.password.' 
+                    UNION 
