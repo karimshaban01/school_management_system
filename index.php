@@ -1,4 +1,8 @@
+<script src="script.js"></script>
 <style>
+    #body {
+        margin-left: 40px;
+    }
     .body-element {
         display: inline-flex;
         margin-left: 5px;
@@ -61,30 +65,32 @@
 
 </style>
 <div class = "main-bar">
-    <h3 style="margin-left: 40px; position : absolute; margin-top : 30px">HOME</h3>
+    <h3  style="margin-left: 40px; position : absolute; margin-top : 30px" >HOME</h3>
 </div>
 
 <div class="body-element">
-    <div class="side-bar">
+    <div class="side-bar" id="nav">
         <ul>
-            <li>DASHBOARD</li>
-            <li>PROFILE</li>
-            <li>PROGRESS</li>
-            <li>CONTACTS</li>
-            <li>TASKS</li>
-            <li>PROMOTION</li>
-            <li>REWARDS</li>
-            <li>PAYMENTS</li>
-            <li>CERTIFICATES</li>
-            <li>LETTERS</li>
+            <li onclick="hello()">DASHBOARD</li>
+            <li onclick="classes()">CLASSES</li>
+            <li onclick="subjects()">SUBJECTS</li>
+            <li onclick="teachers()">TEACHERS</li>
+            <li onclick="students()">STUDENTS</li>
+            <li onclick="results()">RESULTS</li>
+            <li onclick="exams()">EXAMS</li>
+            <li onclick="awards()">AWARDS</li>
+            <li onclick="certificates()">CERTIFICATES</li>
+            <li onclick="letters()">LETTERS</li>
         </ul>
     
     </div>
 </div>
 <div class="body-element" id="page-body">
-    <div class="body-element">
-        <p align="center"><?php include "stdinfo.php"?></p>
+    <div id="body">
+    
+            <h3>you are warmly welcome, but this website is still under development</h3>
     
     </div>
 </div>
 <p align="center">&copy; Karim 2023</p>
+
