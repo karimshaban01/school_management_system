@@ -1,0 +1,11 @@
+
+    th, td {
+        width: max-content;
+        border: 1px solid whitesmoke;
+        text-align: left;
+        
+    }
+
+    tr:nth-child(even){
+        background-color: rgb(233, 231, 224);
+    }

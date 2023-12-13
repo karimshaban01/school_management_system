@@ -24,10 +24,10 @@
         if($status == 'student'){
                     echo "its a student-";
                 //inserting data into db
-                $sql = "INSERT INTO student VALUES('$id', '$name', '$image', '$dob', '$address', '$contact', '$birth_doc', '$nin', '$email','$disability', '$password', '$status')";
-    
+                $sql = "INSERT INTO student VALUES('$id', '$name', '$image', '$dob', '$address', '$contact', '$birth_doc', '$nin', '$email','$disability', '$password', '$status', '2008', '2014')";   
                 if(mysqli_query($conn, $sql)){
                     echo "a record inserted";
+                   //header("Location : index.php");
                 } else { 
                     echo "there was a problem in insertion";
                 }

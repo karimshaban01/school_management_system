@@ -1,9 +1,25 @@
-<link rel="stylesheet" href="style.css">
+<style>
+    input, i {
+   display: block;
+   margin-left: 25%;
+   width: 100%; 
+   margin-top: 5px;
+}
+
+.button {
+    display: inline;
+}
+.container {
+    height: 300%;
+}
+
+
+</style>
 <body>
     <div class="container" style="height:200%">
         <form action="processing.php" method=
         "post">
-            <br><br>
+            <i><h4>ENTER DETAILS OF A NEW STAFF</h4></i>
             <input type="text" name="status" id="" value="staff" style="display: none">
             <i>ID: </i>
             <input type="number" name="regno" placeholder="eg. 00001">

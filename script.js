@@ -1,5 +1,6 @@
- function hello (){
+function hello (){
        document.getElementById('body').innerHTML="hello, you are welcome \n this page is under maintenance";
+       window.alert("hello");
     }
 
      function classes (){

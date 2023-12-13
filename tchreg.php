@@ -1,4 +1,20 @@
-<link rel="stylesheet" href="style.css">
+<style>
+    input, i {
+   display: block;
+   margin-left: 25%;
+   width: 100%; 
+   margin-top: 5px;
+}
+
+.button {
+    display: inline;
+}
+.container {
+    height: 300%;
+}
+
+
+</style>
 <body>
     <div class="container" style="height: 180%">
         <form action="processing.php" method=

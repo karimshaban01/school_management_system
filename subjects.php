@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="tstyle.css">
 <?php 
     include "./processing.php";
 
@@ -6,12 +7,15 @@
     $sql = "SELECT * FROM subject";// WHERE `leaving`-`entry_year`='$class'";
 
     
-
+ echo "<table>
+    <th>SUBJECT ID</th>
+    <th>SUBJECT NAME</th>";
     if($result = $conn->query($sql)){
         while($row = mysqli_fetch_assoc($result)){
-            echo $row['subject_name']."<br>";
+            echo "<tr>";
+            echo "<td>".$row['subjectId']."</td>";
+            echo "<td>".$row['subject_name']."</td>";
+            echo "</tr>";
         } }
-    else {
-            echo "nothing obtained";
-    }
+   echo "</table>";
 ?>
